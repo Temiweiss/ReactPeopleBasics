@@ -3,20 +3,19 @@
 class PersonRow extends React.Component {
 
     render() {
-        const { firstName, lastName, age } = this.props;
-
-        let classNames = '';
-        if (age > 65) {
-            classNames += ' bg-danger';
-        }
-        
-
+        const { people } = this.props;
+    
         return (
-            <tr className={classNames}>
-                <td>{firstName}</td>
-                <td>{lastName}</td>
-                <td>{age}</td>
-            </tr>
+            people.map((p, i) => {
+                return (
+                    <tr key={i} className={p.age > 65 ? 'table-danger' : ''}>
+                        <td>{p.firstName}</td>
+                        <td>{p.lastName}</td>
+                        <td>{p.age}</td>
+                    </tr>
+                    )
+            })
+           
         );
 
 

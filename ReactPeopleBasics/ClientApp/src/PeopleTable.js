@@ -41,7 +41,7 @@ class PeopleTable extends React.Component {
 
     render() {
        return (
-            <div className='container mt-8'>
+            <div className='container mt-5'>
                     <PersonForm
                         onFirstNameChange={this.onFirstNameChange}
                         onLastNameChange={this.onLastNameChange}
@@ -51,17 +51,17 @@ class PeopleTable extends React.Component {
                         age={this.state.age}
                         onAddClick={this.onAddClick}
                         onClearClick={this.onClearClick}
-                    />
-                <table className='table-striped table-hover table-bordered'>
-                    <thead>
-                        <tr>
-                            <td>First Name</td>
-                            <td>Last Name</td>
-                            <td>Age</td>
+               />
+               <table className='table-striped table-hover table-bordered container mt-5'>
+                   <thead>
+                       <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Age</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        {this.state.people.map((p, i) => <PersonRow person={p} key={i} />)}
+                   <tbody>
+                       <PersonRow people={this.state.people}/>
                     </tbody>
                 </table>
             </div>
